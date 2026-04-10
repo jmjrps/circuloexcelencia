@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Círculo de la Excelencia — Juliana Reinat</title>
+  <link rel="stylesheet" href="https://use.typekit.net/yza0lrf.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gold:#AF9575;--gold-light:#C9B49D;--gold-pale:#E5D9CF;
+      --dark:#1A1A1A;--dark-2:#111111;--dark-card:#222220;
+      --cream:#F5F0EA;--radius:12px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Nunito Sans',sans-serif;font-weight:300;background:var(--dark-2);color:var(--cream);overflow-x:hidden;}
+    
+    /* NAV */
+    nav{padding:32px 56px;display:flex;justify-content:center;background:var(--dark-2);}
+    .logo{height:50px;width:auto;}
+
+    /* HERO */
+    .hero{padding:80px 24px;text-align:center;max-width:800px;margin:0 auto;}
+    .badge{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:10px;letter-spacing:.3em;text-transform:uppercase;padding:8px 24px;border-radius:100px;margin-bottom:32px;}
+    h1{font-family:gelica,serif;font-size:clamp(40px,6vw,72px);line-height:1.1;margin-bottom:24px;}
+    h1 em{font-style:italic;color:var(--gold);}
+    .hero-p{font-size:18px;line-height:1.8;color:var(--gold-pale);opacity:0.9;}
+
+    /* REWARDS GRID */
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:48px 24px;max-width:1000px;margin:0 auto;}
+    .card{background:var(--dark-card);border:1px solid rgba(175,149,117,0.15);padding:48px 32px;border-radius:var(--radius);text-align:center;transition:0.3s;}
+    .card:hover{border-color:var(--gold);transform:translateY(-5px);}
+    .card-val{font-family:gelica,serif;font-size:48px;color:var(--gold);margin-bottom:8px;}
+    .card-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-light);margin-bottom:16px;}
+    .card-p{font-size:14px;color:var(--gold-pale);line-height:1.6;}
+
+    /* FORM */
+    .form-box{background:var(--dark);padding:56px;border-radius:var(--radius);max-width:650px;margin:48px auto;border:1px solid rgba(255,255,255,0.05);}
+    .field{margin-bottom:24px;display:flex;flex-direction:column;}
+    .field label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+    .field input{background:rgba(255,255,255,0.03);border:1px solid rgba(175,149,117,0.2);padding:16px;color:white;border-radius:6px;outline:none;}
+    .field input:focus{border-color:var(--gold);}
+    .btn{width:100%;padding:20px;background:var(--gold);color:var(--dark);border:none;border-radius:6px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;cursor:pointer;transition:0.3s;}
+    .btn:hover{background:var(--gold-light);box-shadow:0 10px 30px rgba(175,149,117,0.2);}
+
+    #success{display:none;text-align:center;padding:48px;}
+
+    @media(max-width:768px){
+      .grid{grid-template-columns:1fr;}
+      nav{padding:24px;}
+      .form-box{margin:24px;padding:32px;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <img src="https://pianolabs.julianareinat.com/JulianaReinat-LogoBlanco-SinFondo.png" class="logo" alt="Juliana Reinat">
+</nav>
+
+<section class="hero">
+  <div class="badge">Reconocimiento de Comunidad</div>
+  <h1>La excelencia atrae <em>excelencia.</em></h1>
+  <p class="hero-p">Ayúdanos a identificar a las nuevas promesas para expandir el legado de "Piano Families" que construimos juntos.</p>
+</section>
+
+<div class="grid">
+  <div class="card">
+    <div class="card-val">50%</div>
+    <div class="card-label">Bono de Excelencia</div>
+    <p class="card-p">Recibe un 50% de descuento en tu próxima matrícula por cada familia vinculada.</p>
+  </div>
+  <div class="card">
+    <div class="card-val">$150k</div>
+    <div class="card-label">Crédito de Honor</div>
+    <p class="card-p">Sumaremos este crédito a tu cuenta por cada 2 o más familias referidas.</p>
+  </div>
+</div>
+
+<div class="form-box" id="form-container">
+  <form id="referral-form" action="https://formspree.io/f/mjgpqjwn" method="POST">
+    <div class="field">
+      <label>Tu Nombre (Familia que refiere)</label>
+      <input type="text" name="Referido_Por" placeholder="Nombre completo" required>
+    </div>
+    <div style="height:1px; background:rgba(175,149,117,0.1); margin:32px 0;"></div>
+    <div class="field">
+      <label>Nombre del Amigo/Familiar Referido</label>
+      <input type="text" name="Nombre_Referido" placeholder="Nombre completo" required>
+    </div>
+    <div class="field">
+      <label>WhatsApp del Referido</label>
+      <input type="tel" name="WhatsApp_Referido" placeholder="+57 300 000 0000" required>
+    </div>
+    <button type="submit" class="btn">Postular Referido ✦</button>
+  </form>
+</div>
+
+<div id="success">
+  <h2 style="font-family:gelica; color:var(--gold); font-size:32px;">¡Postulación Enviada!</h2>
+  <p style="margin-top:16px; color:var(--gold-pale);">Nos encargaremos de extenderles una Invitación Privada para una Entrevista de Diagnóstico con el rigor y la elegancia que nuestro estándar exige.</p>
+</div>
+
+<script>
+  document.getElementById('referral-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('.btn');
+    btn.innerText = "Enviando...";
+    
+    const response = await fetch(this.action, {
+      method: 'POST',
+      body: new FormData(this),
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      document.getElementById('form-container').style.display = 'none';
+      document.getElementById('success').style.display = 'block';
+    }
+  });
+</script>
+
+</body>
+</html>
